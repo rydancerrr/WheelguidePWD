@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/profileBackground">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/TransparentText">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:cardCornerRadius="40dp"
+                android:scaleType="fitXY"
+                app:cardPreventCornerOverlap="false"
+               >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout"
+                android:background="@drawable/bg">
+                <TextView
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:onClick="Back"
+                    android:background="@drawable/back_to_home_button"
+                    style="@style/profileStyledBackButton" />
+
+                <TextView
+                    android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name Location"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textSize="28dp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" "
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+                <RatingBar
+                    android:id="@+id/simpleRatingBarShow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX=".75"
+                    android:scaleY=".75"
+                    android:transformPivotX="20mm"
+                    android:transformPivotY="0dp"
+                    android:isIndicator="true"
+                    android:max="5"
+                    />
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:layout_gravity="bottom"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:background="@color/profileBackground">-->
+<!--                 -->
+
+<!--                </RelativeLayout>-->
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <include layout="@layout/content_data"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

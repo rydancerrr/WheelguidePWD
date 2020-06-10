@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/parentLayout"
+    android:padding="5dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#ACACAC"
+        card_view:cardUseCompatPadding="true"
+        app:cardUseCompatPadding="true"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/reviewerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:hint="Name"/>
+
+        <TextView
+            android:id="@+id/Rev"
+            android:layout_below="@+id/reviewerName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="1dp"
+            />
+        <RatingBar
+            android:id="@+id/simpleRatingBarShow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Rev"
+            android:scaleX=".5"
+            android:scaleY=".5"
+            android:transformPivotX="0dp"
+            android:transformPivotY="0dp"
+            android:isIndicator="true"
+            android:layout_marginStart="5dp"
+            android:max="5">
+        </RatingBar>
+        <TextView
+            android:id="@+id/etFeedback"
+            android:layout_below="@id/simpleRatingBarShow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-30dp"
+            android:layout_marginStart="5dp"
+           android:text="Sample Text Lorem Ipsum Dimsum"
+            />
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

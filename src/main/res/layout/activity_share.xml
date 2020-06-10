@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_share"
+    android:background="@drawable/bg"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activities.ShareActivity"
+    >
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"
+       />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@+id/toolbar">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editName1"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true"
+                >
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About the Place"
+                    android:padding="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/nameoflocation"
+                    />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_below="@id/nameoflocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                     android:text="Add a Photo"
+                    android:layout_centerHorizontal="true"
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="180dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/imageView"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rectangle"
+                    android:hint="Enter Place Name"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle"
+                    android:layout_below="@id/imageView"
+                    android:layout_marginTop="3dp"
+                    android:layout_toEndOf="@id/editName">
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:entries="@array/category_arrays"
+                    android:prompt="@string/category_name"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/editDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/editName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Description"
+                    android:background="@drawable/rectangle"
+                    android:inputType="textShortMessage"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="16dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editDetails"
+                    android:layout_marginStart="5dp"
+                    android:text="Location"
+                    android:textSize="19dp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:id="@+id/textContact"
+                    />
+
+                <fragment
+                    android:id="@+id/google_map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_below="@id/textContact"
+                    android:layout_alignParentStart="true"
+                    map:cameraTargetLat="12.8797"
+                    map:cameraTargetLng="121.7740"
+                    map:cameraZoom="20"
+                    tools:context=".Activities.ShareActivity" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/google_map"
+                    android:text="Accessibility"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:id="@+id/accessible"
+                    />
+
+
+
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/accessible"
+                        android:id="@+id/check"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/rectangle">
+                        <CheckBox
+                            android:id="@+id/acc_sign"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Sign Languange Accessible"/>
+                        <CheckBox
+                            android:id="@+id/acc_park"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/acc_sign"
+                            android:text="Parking Spaces Accessible"/>
+                        <CheckBox
+                            android:id="@+id/acc_wheel"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/acc_park"
+                            android:text="Wheelchair Accessible"/>
+                        <CheckBox
+                            android:id="@+id/acc_wide"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/acc_wheel"
+                            android:text="Wide Elevator Accessible"/>
+                        <CheckBox
+                            android:id="@+id/acc_room"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@id/acc_wide"
+                            android:text="Disabled Bathroom Accessible"/>
+
+                    </RelativeLayout>
+
+
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:layout_below="@id/check"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    />
+            </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+    <include layout="@layout/nav"
+        android:id="@+id/bottom_navigation"/>
+
+
+</RelativeLayout>
+
+
